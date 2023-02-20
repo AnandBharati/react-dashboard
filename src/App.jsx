@@ -48,7 +48,7 @@ function App() {
       <Routes>
         {/*third flex element*/}
         <Route path='/' element={<Layout setOpen={setOpen} />}>
-          <Route index element={<Dashboard />} />
+          <Route index element={!userInfo.token ? <Login /> : <Dashboard />} />
           <Route path='/login' element={!userInfo.token ? <Login /> : <Dashboard />} />
           <Route path='/logout' element={userInfo.token ? <Logout setUserInfo={setUserInfo} /> : <Login />} />
           <Route path='/users' element={!userInfo.token ? <Login /> : <Users />} />
