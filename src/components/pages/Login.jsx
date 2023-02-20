@@ -29,7 +29,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login() {
+export default function Login({setUserInfo=}) {
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
@@ -48,7 +48,8 @@ export default function Login() {
           localStorage.setItem('token', result.token);
           localStorage.setItem('username', data.get('username'));
           localStorage.setItem('refreshToken', result.refreshToken);
-          console.log(result)
+          setUserInfo({username: data.get('username'),token: result.token , refreshToken: result.refreshToken})
+          // console.log(result)
           navigate('/')
       })
       .catch((err)=> console.log({error: err}))
