@@ -29,7 +29,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login({setUserInfo=}) {
+export default function Login({setUserInfo}) {
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
