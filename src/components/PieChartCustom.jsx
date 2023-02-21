@@ -2,7 +2,7 @@ import { Tooltip, Typography } from '@mui/material';
 import React from 'react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 
-function PieChartCustom({ data, chartName }) {
+function PieChartCustom({ data }) {
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
     const RADIAN = Math.PI / 180;
@@ -37,7 +37,7 @@ function PieChartCustom({ data, chartName }) {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
-                <Tooltip />
+                <Tooltip children={<p>children</p>} />
             </PieChart>
         {/* </ResponsiveContainer> */}
         {/* <Typography variant='div'>{chartName}</Typography> */}

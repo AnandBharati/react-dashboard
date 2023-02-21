@@ -116,9 +116,9 @@ function Dashboard() {
           <Typography variant='h6'>Region wise | Liability | Asset </Typography>
         </Stack>
 
-        <Box sx={{ flex: '1 1 50%', boxShadow: '4px 4px 4px 0 #ddd' }}>
+        <Stack alignItems='center' sx={{ flex: '1 1 50%', boxShadow: '4px 4px 4px 0 #ddd' }}>
           {renderLineChart}
-        </Box>
+        </Stack>
       </Stack>
 
     </Container>
