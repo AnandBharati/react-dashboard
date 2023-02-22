@@ -64,13 +64,15 @@ function Dashboard() {
 
   ];
   const renderLineChart = (
-    <LineChart height={320} width={600} data={data}>
-      <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-    </LineChart>
+    <ResponsiveContainer width={'100%'} height={250}>
+      <LineChart data={data} >
+        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
   );
 
   /**********************Pie chart*************** */
@@ -108,7 +110,7 @@ function Dashboard() {
         </Stack>
 
         <Stack flexBasis='50%' justifyContent={'center'} alignItems='center' flexDirection={'column'}>
-          <Stack direction={{xs: 'column', sm: 'row'}}>
+          <Stack direction={{ xs: 'column', sm: 'row' }}>
             <PieChartCustom data={PieData} chartName='Region wise' />
             <PieChartCustom data={PieData2} chartName='Liability' />
             <PieChartCustom data={PieData3} chartName='Asset' />
@@ -116,7 +118,7 @@ function Dashboard() {
           <Typography variant='h6'>Region wise | Liability | Asset </Typography>
         </Stack>
 
-        <Stack alignItems='center' sx={{ flex: '1 1 50%', boxShadow: '4px 4px 4px 0 #ddd' }}>
+        <Stack alignItems='center' sx={{ flex: '1 1 50%', boxShadow: '4px 4px 4px 0 #ddd', overflow: 'hidden' }}>
           {renderLineChart}
         </Stack>
       </Stack>
